@@ -1,4 +1,7 @@
 import turtle as tt
+tt.hideturtle()
+tt.penup()
+tt.setup(1920,1080)
 
 def main():
 	obj1 = tt.clone()
@@ -14,8 +17,5 @@ def main():
 	obj2.goto(-100,0)
 
 if __name__ == '__main__':
-	tt.hideturtle()
-	tt.penup()
-	tt.setup(1920,1080)
 	main()
 	tt.done()
