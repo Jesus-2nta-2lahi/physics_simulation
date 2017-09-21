@@ -1,21 +1,31 @@
-import turtle as tt
-tt.hideturtle()
-tt.penup()
-tt.setup(1920,1080)
+import pygame
 
-def main():
-	obj1 = tt.clone()
-	obj1.color('red')
-	obj1.shape('circle')
-	obj1.showturtle()
-	obj1.goto(100,0)
+bgcolor = (255,255,255)
+screen = pygame.display.set_mode((1000, 1000))
+screen.fill(bgcolor)
 
-	obj2 = tt.clone()
-	obj2.color('blue')
-	obj2.shape('circle')
-	obj2.showturtle()
-	obj2.goto(-100,0)
+pygame.draw.circle(screen, (0,0,0), (500, 500), 15, 15)
+pygame.display.flip()
+pygame.display.set_caption('testing12')
 
-if __name__ == '__main__':
-	main()
-	tt.done()
+location = (200,200)
+my_ball = Ball(location,30)
+my_ball.display()
+
+class Ball:
+	def __init__(sef, location, size):
+		self.location = location
+		self.size = size
+		self.color = (0,0,0)
+		self.thickness = self.size
+
+	def display(self):
+		pygame.draw.circle(screen,self.color,self.location,self.size, self.thickness)
+		
+
+running = True
+
+while running:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+ 	   running = False
